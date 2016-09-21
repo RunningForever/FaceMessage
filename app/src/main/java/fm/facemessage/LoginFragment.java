@@ -7,10 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.beardedhen.androidbootstrap.BootstrapEditText;
+
 /**
  * Created by Administrator on 2016/8/17.
  */
 public class LoginFragment extends Fragment{
+
+    private BootstrapEditText mUsername;
+    private BootstrapEditText mPassword;
 
     public static LoginFragment newInstance(){return new LoginFragment();}
 
@@ -18,6 +23,14 @@ public class LoginFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.login_fragment,container,false);
+        mUsername = (BootstrapEditText) v.findViewById(R.id.username);
+        mPassword = (BootstrapEditText) v.findViewById(R.id.password);
         return v;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
     }
 }
