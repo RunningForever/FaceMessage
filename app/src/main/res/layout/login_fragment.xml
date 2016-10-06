@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,16 +14,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical">
+
             <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="126dp"
+                android:src="@mipmap/ic_launcher"
                 app:bootstrapBrand="secondary"
-                app:hasBorder="true"
-                />
+                app:hasBorder="true" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_margin="16dp">
 
                 <com.beardedhen.androidbootstrap.AwesomeTextView
                     android:layout_width="wrap_content"
@@ -68,6 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:hint="@string/password"
+                    android:inputType="textPassword"
                     app:bootstrapBrand="primary"
                     app:roundedCorners="true" />
             </LinearLayout>
