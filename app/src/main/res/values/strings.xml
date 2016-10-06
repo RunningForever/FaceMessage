@@ -2,5 +2,7 @@
     <string name="app_name">FaceMessage</string>
     <string name="username">username</string>
     <string name="password">password</string>
-    <string name="register">Please enter the register info</string>
+    <string name="register_info">Please enter the register info</string>
+    <string name="login">Login In</string>
+    <string name="register">Register</string>
 </resources>

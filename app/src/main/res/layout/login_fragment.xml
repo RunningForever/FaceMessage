@@ -17,16 +17,16 @@
 
             <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
                 android:layout_width="wrap_content"
-                android:layout_height="126dp"
-                android:src="@mipmap/ic_launcher"
+                android:layout_height="100dp"
+                android:src="@drawable/logo"
                 app:bootstrapBrand="secondary"
                 app:hasBorder="true" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="16dp">
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
 
                 <com.beardedhen.androidbootstrap.AwesomeTextView
                     android:layout_width="wrap_content"
@@ -76,6 +76,37 @@
                     app:bootstrapBrand="primary"
                     app:roundedCorners="true" />
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@string/login"
+                app:bootstrapBrand="success"
+                app:bootstrapSize="lg"
+                app:buttonMode="regular"
+                app:roundedCorners="true"
+                app:showOutline="false" />
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                app:bootstrapBrand="success"
+                app:bootstrapSize="lg"
+                app:buttonMode="regular"
+                app:roundedCorners="true"
+                app:showOutline="false" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
