@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
         android:layout_width="166dp"
-        android:layout_height="240dp"
+        android:layout_height="110dp"
         android:layout_gravity="center"
         android:src="@mipmap/ic_launcher"
         app:bootstrapBrand="info"
-        app:hasBorder="true" />
+        app:hasBorder="true"
+        android:layout_weight="0.05" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,11 +26,59 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
         <com.beardedhen.androidbootstrap.AwesomeTextView
             android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            app:fontAwesomeIcon="fa_user"
+            app:bootstrapBrand="success"
+            android:layout_marginRight="4dp"/>
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            app:fontAwesomeIcon="fa_user" />
+            app:bootstrapBrand="success"
+            app:roundedCorners="true"
+            android:hint="@string/username"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_margin="12dp">
+
+        <com.beardedhen.androidbootstrap.AwesomeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            app:fontAwesomeIcon="fa_adjust"
+            app:bootstrapBrand="success"
+            android:layout_marginRight="4dp"/>
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:bootstrapBrand="success"
+            app:roundedCorners="true"
+            android:hint="@string/password"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <com.beardedhen.androidbootstrap.AwesomeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            app:fontAwesomeIcon="fa_adjust"
+            app:bootstrapBrand="success"
+            android:layout_marginRight="4dp"/>
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:bootstrapBrand="success"
+            app:roundedCorners="true"
+            android:hint="@string/register_rePwd"/>
     </LinearLayout>
 </LinearLayout>

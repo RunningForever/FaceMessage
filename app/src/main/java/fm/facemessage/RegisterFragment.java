@@ -19,7 +19,7 @@ public class RegisterFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.register_fragment, container);
+        View v = inflater.inflate(R.layout.register_fragment, container,false);
         return v;
     }
 }

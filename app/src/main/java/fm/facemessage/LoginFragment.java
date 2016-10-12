@@ -4,9 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.beardedhen.androidbootstrap.BootstrapButton;
 import com.beardedhen.androidbootstrap.BootstrapEditText;
@@ -33,19 +37,18 @@ public class LoginFragment extends Fragment {
         mPassword = (BootstrapEditText) v.findViewById(R.id.password);
         mLogin = (BootstrapButton) v.findViewById(R.id.login);
         mRegister = (BootstrapButton) v.findViewById(R.id.register);
+        mRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = getFragmentManager();
+                RegisterFragment registerFragment = RegisterFragment.newInstance().newInstance();
+            }
+        });
         return v;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent();
-                i.setClass(getActivity(),RegisterActivity.class);
-                startActivity(i);
-            }
-        });
     }
 }

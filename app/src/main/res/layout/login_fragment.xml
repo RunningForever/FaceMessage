@@ -9,74 +9,63 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            app:bootstrapBrand="secondary"
+            app:hasBorder="true"
+            android:layout_gravity="center"/>
 
-            <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+        <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:src="@drawable/logo"
-                app:bootstrapBrand="secondary"
-                app:hasBorder="true" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <com.beardedhen.androidbootstrap.AwesomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
-                    app:bootstrapBrand="primary"
+                    app:bootstrapBrand="success"
                     app:fontAwesomeIcon="fa_user" />
 
                 <com.beardedhen.androidbootstrap.BootstrapEditText
                     android:id="@+id/username"
                     style="@style/FMEditText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:hint="@string/username"
-                    app:bootstrapBrand="primary"
+                    app:bootstrapBrand="success"
                     app:roundedCorners="true" />
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <com.beardedhen.androidbootstrap.AwesomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
-                    app:bootstrapBrand="primary"
+                    app:bootstrapBrand="success"
                     app:fontAwesomeIcon="fa_coffee" />
 
                 <com.beardedhen.androidbootstrap.BootstrapEditText
                     android:id="@+id/password"
                     style="@style/FMEditText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    app:bootstrapBrand="primary"
+                    app:bootstrapBrand="success"
                     app:roundedCorners="true" />
             </LinearLayout>
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -95,7 +84,7 @@
                 app:bootstrapSize="lg"
                 app:buttonMode="regular"
                 app:roundedCorners="true"
-                app:showOutline="false" />
+                app:showOutline="false"/>
 
             <com.beardedhen.androidbootstrap.BootstrapButton
                 android:id="@+id/register"
