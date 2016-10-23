@@ -39,7 +39,10 @@
                     android:layout_gravity="center"
                     android:hint="@string/username"
                     app:bootstrapBrand="success"
-                    app:roundedCorners="true" />
+                    app:roundedCorners="true"
+                    android:fontFamily="cursive"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/colorPressedHighlight" />
             </LinearLayout>
 
             <LinearLayout
@@ -64,7 +67,9 @@
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     app:bootstrapBrand="success"
-                    app:roundedCorners="true" />
+                    app:roundedCorners="true"
+                    android:textAlignment="center"
+                    android:fontFamily="cursive" />
             </LinearLayout>
 
         <LinearLayout
@@ -84,7 +89,8 @@
                 app:bootstrapSize="lg"
                 app:buttonMode="regular"
                 app:roundedCorners="true"
-                app:showOutline="false"/>
+                app:showOutline="false"
+                android:fontFamily="cursive" />
 
             <com.beardedhen.androidbootstrap.BootstrapButton
                 android:id="@+id/register"
@@ -95,7 +101,8 @@
                 app:bootstrapSize="lg"
                 app:buttonMode="regular"
                 app:roundedCorners="true"
-                app:showOutline="false" />
+                app:showOutline="false"
+                android:fontFamily="cursive" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

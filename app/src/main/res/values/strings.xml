@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">FaceMessage</string>
+    <string name="app_name">Face</string>
     <string name="username">username</string>
     <string name="password">password</string>
     <string name="register_info">Please enter the register info</string>
     <string name="login">Login in</string>
     <string name="register">Register</string>
     <string name="register_rePwd">Confirm password</string>
+    <string name="photo_info">Please take some pictures(face)</string>
+    <string name="take_photo">Take</string>
+    <string name="register_commit">Confirm</string>
+    <string name="register_back">Back</string>
 </resources>

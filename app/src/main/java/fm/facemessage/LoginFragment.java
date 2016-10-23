@@ -40,8 +40,8 @@ public class LoginFragment extends Fragment {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fm = getFragmentManager();
-                RegisterFragment registerFragment = RegisterFragment.newInstance().newInstance();
+               Intent i = new Intent(getActivity(),RegisterActivity.class);
+                startActivity(i);
             }
         });
         return v;

@@ -1,84 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1">
-
-    <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
-        android:layout_width="166dp"
-        android:layout_height="110dp"
-        android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher"
-        app:bootstrapBrand="info"
-        app:hasBorder="true"
-        android:layout_weight="0.05" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:text="@string/register_info"
-        android:textSize="24sp" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <com.beardedhen.androidbootstrap.AwesomeTextView
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            app:fontAwesomeIcon="fa_user"
-            app:bootstrapBrand="success"
-            android:layout_marginRight="4dp"/>
-        <com.beardedhen.androidbootstrap.BootstrapEditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:bootstrapBrand="success"
-            app:roundedCorners="true"
-            android:hint="@string/username"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_margin="12dp">
-
-        <com.beardedhen.androidbootstrap.AwesomeTextView
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            app:fontAwesomeIcon="fa_adjust"
-            app:bootstrapBrand="success"
-            android:layout_marginRight="4dp"/>
-        <com.beardedhen.androidbootstrap.BootstrapEditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:bootstrapBrand="success"
-            app:roundedCorners="true"
-            android:hint="@string/password"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <com.beardedhen.androidbootstrap.AwesomeTextView
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            app:fontAwesomeIcon="fa_adjust"
-            app:bootstrapBrand="success"
-            android:layout_marginRight="4dp"/>
-        <com.beardedhen.androidbootstrap.BootstrapEditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:bootstrapBrand="success"
-            app:roundedCorners="true"
-            android:hint="@string/register_rePwd"/>
-    </LinearLayout>
-</LinearLayout>
+<?xml version="1.0" encoding="utf-8"?><ScrollView xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"    android:layout_height="match_parent"    android:orientation="vertical"    android:weightSum="1">    <LinearLayout        android:layout_width="match_parent"        android:layout_height="match_parent"        android:orientation="vertical">        <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail            android:layout_width="166dp"            android:layout_height="110dp"            android:layout_gravity="center"            android:layout_weight="0.05"            android:src="@drawable/logo"            app:bootstrapBrand="info"            app:hasBorder="true" />        <TextView            android:layout_width="wrap_content"            android:layout_height="wrap_content"            android:layout_gravity="center"            android:layout_margin="16dp"            android:fontFamily="cursive"            android:text="@string/register_info"            android:textColor="@color/bootstrap_brand_danger"            android:textSize="24sp"            android:textStyle="normal|bold"            android:typeface="normal" />        <LinearLayout            android:layout_width="wrap_content"            android:layout_height="wrap_content"            android:layout_gravity="center"            android:orientation="horizontal">            <com.beardedhen.androidbootstrap.AwesomeTextView                android:layout_width="wrap_content"                android:layout_height="25dp"                android:layout_marginRight="4dp"                app:bootstrapBrand="success"                app:fontAwesomeIcon="fa_user" />            <com.beardedhen.androidbootstrap.BootstrapEditText                android:layout_width="200dp"                android:layout_height="wrap_content"                android:fontFamily="cursive"                android:hint="@string/username"                android:textAlignment="center"                android:textColor="?android:attr/colorPressedHighlight"                android:textStyle="normal|bold"                app:bootstrapBrand="success"                app:roundedCorners="true"                android:inputType="textFilter"                android:id="@+id/username"/>        </LinearLayout>        <LinearLayout            android:layout_width="wrap_content"            android:layout_height="wrap_content"            android:layout_gravity="center"            android:layout_margin="12dp"            android:orientation="horizontal">            <com.beardedhen.androidbootstrap.AwesomeTextView                android:layout_width="wrap_content"                android:layout_height="25dp"                android:layout_marginRight="4dp"                app:bootstrapBrand="success"                app:fontAwesomeIcon="fa_adjust" />            <com.beardedhen.androidbootstrap.BootstrapEditText                android:layout_width="200dp"                android:layout_height="wrap_content"                android:fontFamily="cursive"                android:hint="@string/password"                android:inputType="textPassword"                android:textAlignment="center"                android:textColor="?android:attr/colorPressedHighlight"                android:textStyle="normal|bold"                app:bootstrapBrand="success"                app:roundedCorners="true"                android:id="@+id/password" />        </LinearLayout>        <LinearLayout            android:layout_width="wrap_content"            android:layout_height="wrap_content"            android:layout_gravity="center"            android:orientation="horizontal">            <com.beardedhen.androidbootstrap.AwesomeTextView                android:layout_width="wrap_content"                android:layout_height="25dp"                android:layout_marginRight="4dp"                app:bootstrapBrand="success"                app:fontAwesomeIcon="fa_adjust" />            <com.beardedhen.androidbootstrap.BootstrapEditText                android:layout_width="200dp"                android:layout_height="wrap_content"                android:fontFamily="cursive"                android:hint="@string/register_rePwd"                android:inputType="textPassword"                android:textAlignment="center"                android:textColor="?android:attr/colorPressedHighlight"                android:textStyle="normal|bold"                app:bootstrapBrand="success"                app:roundedCorners="true"                android:id="@+id/re_password"/>        </LinearLayout>        <TextView            android:layout_width="wrap_content"            android:layout_height="wrap_content"            android:layout_gravity="center"            android:layout_margin="16dp"            android:fontFamily="cursive"            android:text="@string/photo_info"            android:textAllCaps="false"            android:textColor="@color/bootstrap_brand_success"            android:textSize="18sp"            android:textStyle="normal|bold"            android:typeface="normal" />        <com.beardedhen.androidbootstrap.BootstrapThumbnail            android:id="@+id/image1"            android:layout_width="178dp"            android:layout_height="158dp"            android:layout_gravity="center"            android:scaleType="centerCrop"            android:src="@drawable/person"            app:bootstrapBrand="success" />        <com.beardedhen.androidbootstrap.BootstrapButton            android:layout_width="wrap_content"            android:layout_height="wrap_content"            android:layout_gravity="center"            android:layout_margin="8dp"            android:fontFamily="cursive"            android:text="@string/take_photo"            android:textStyle="normal|bold"            app:bootstrapBrand="success"            app:roundedCorners="true"            android:id="@+id/takephoto1"            />        <com.beardedhen.androidbootstrap.BootstrapThumbnail            android:id="@+id/image2"            android:layout_width="178dp"            android:layout_height="158dp"            android:layout_gravity="center"            android:background="@drawable/angle"            android:scaleType="centerCrop"            android:src="@drawable/person"            app:bootstrapBrand="success" />        <com.beardedhen.androidbootstrap.BootstrapButton            android:layout_width="wrap_content"            android:layout_height="wrap_content"            android:layout_gravity="center"            android:layout_margin="8dp"            android:fontFamily="cursive"            android:text="@string/take_photo"            app:bootstrapBrand="success"            app:roundedCorners="true"            android:id="@+id/takephoto2"/>        <com.beardedhen.androidbootstrap.BootstrapThumbnail            android:id="@+id/image3"            android:layout_width="178dp"            android:layout_height="158dp"            android:layout_gravity="center"            android:background="@drawable/angle"            android:scaleType="centerCrop"            android:src="@drawable/person"            app:bootstrapBrand="success" />        <com.beardedhen.androidbootstrap.BootstrapButton            android:layout_width="wrap_content"            android:layout_height="wrap_content"            android:layout_gravity="center"            android:layout_margin="8dp"            android:fontFamily="cursive"            android:text="@string/take_photo"            app:bootstrapBrand="success"            app:roundedCorners="true"            android:id="@+id/takephoto3"/>        <LinearLayout            android:layout_width="wrap_content"            android:layout_height="wrap_content"            android:layout_gravity="center"            android:layout_marginTop="16dp"            android:orientation="horizontal">            <com.beardedhen.androidbootstrap.BootstrapButton                android:layout_width="100dp"                android:layout_height="wrap_content"                android:layout_marginRight="32dp"                android:fontFamily="cursive"                android:text="@string/register_commit"                app:bootstrapBrand="success"                app:roundedCorners="true"                android:id="@+id/commit_register" />            <com.beardedhen.androidbootstrap.BootstrapButton                android:layout_width="100dp"                android:layout_height="wrap_content"                android:fontFamily="cursive"                android:text="@string/register_back"                app:bootstrapBrand="success"                app:roundedCorners="true" />        </LinearLayout>    </LinearLayout></ScrollView>
