@@ -1,3 +1,3 @@
 # FaceMessage
 
-#这是一款基于faca++，利用人脸识别来留言的软件！
+#This is an app in megvii cloud,it can conmmunicate with others by your face!
