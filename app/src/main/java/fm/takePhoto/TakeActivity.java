@@ -26,7 +26,6 @@ import fm.facemessage.R;
  */
 
 public class TakeActivity extends TakePhotoActivity  {
-    private BootstrapThumbnail mBootStrapThumbnail;
     private TakePhoto mTakePhoto;
 
     public static String IMAGE_PATH = "image_path";
@@ -62,7 +61,7 @@ public class TakeActivity extends TakePhotoActivity  {
     }
     private void Take()
     {
-        File file=new File(Environment.getExternalStorageDirectory(), "/temp/"+System.currentTimeMillis() + ".jpg");
+        File file=new File(Environment.getExternalStorageDirectory(), "/FaceMessage/photo/"+System.currentTimeMillis() + ".jpg");
         if (!file.getParentFile().exists())file.getParentFile().mkdirs();
         Uri imageUri = Uri.fromFile(file);
         TakeConfig mConfig = new TakeConfig(mTakePhoto);

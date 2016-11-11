@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Face</string>
+    <string name="app_name">FaceMessage</string>
     <string name="username">username</string>
     <string name="password">password</string>
     <string name="register_info">Please enter the register info</string>
