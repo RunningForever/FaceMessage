@@ -28,7 +28,7 @@ public class FaceRequest{
         IMAGE_3 = path_3;
     }
     public void detect(){
-        mDetect = new FaceDetect(mHandler,IMAGE_1);
+        mDetect = new FaceDetect(mHandler,IMAGE_1,IMAGE_2,IMAGE_3);
         mDetect.start();
     }
 }
