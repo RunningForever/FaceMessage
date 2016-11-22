@@ -21,13 +21,14 @@ import org.json.JSONObject;
 
 import java.io.File;
 
+import fm.FaceDetect.FaceDetect;
+import fm.FaceSet.Set;
+import fm.FaceSet.SetSearch;
 import fm.FmDialog.DialogState;
 import fm.FmDialog.RegisterDialog;
 import fm.HttpRequest.FaceRequest;
 import fm.HttpRequest.HttpExecute;
-import fm.HttpRequest.ServerConfig;
 import fm.takePhoto.TakeActivity;
-import fm.FaceDetect.FaceDetect;
 
 /**
  * Created by Administrator on 10/6/2016.
@@ -68,6 +69,12 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     private FaceRequest mFaceRequest;
 
+    private HttpExecute mExecute;
+
+    private SetSearch mSearch;
+
+    private Set mSet;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -97,7 +104,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         mRegister.setOnClickListener(this);
 
         mDialog = new RegisterDialog(getActivity());
-
         return v;
     }
 
@@ -114,6 +120,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                             JSONObject jsonObject = new JSONObject((String) msg.obj);
                             switch (jsonObject.getInt("state")) {
                                 case REGISTER_STATE_FAIL:
+                                    System.out.println(jsonObject.getInt("state"));
                                     mDialog.changeState(DialogState.Register.ALREDY_REGISTER, jsonObject.getString("username"));
                                     break;
                                 case REGISTER_STATE_SUCCESS:
@@ -125,7 +132,31 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                         }
                         break;
                     case FaceDetect.FACE_DETECT_ERROR:
-                        mDialog.changeState(FaceDetect.FACE_DETECT_ERROR,"");
+                        mDialog.changeState(FaceDetect.FACE_DETECT_ERROR, "");
+                        break;
+                    case DialogState.Detect.FACE_ERROR_1:
+                        mDialog.changeState(DialogState.Detect.FACE_ERROR_1, "");
+                        break;
+                    case DialogState.Detect.FACE_ERROR_2:
+                        mDialog.changeState(DialogState.Detect.FACE_ERROR_2, "");
+                        break;
+                    case DialogState.Detect.FACE_ERROR_3:
+                        mDialog.changeState(DialogState.Detect.FACE_ERROR_3, "");
+                        break;
+                    case DialogState.Detect.FACE_DETECT_SUCCESS:
+                        mSearch = new SetSearch(mHandler, (String) msg.obj);
+                        mSearch.start();
+                        break;
+                    case DialogState.Detect.FACE_CAN_REGISTER:
+                        mSet = new Set(mHandler);
+                        mSet.Add((String) msg.obj);
+                        break;
+                    case DialogState.Detect.FACE_NOT_REGISTER:
+                        mExecute = new HttpExecute(mHandler);
+                        mExecute.Register(mUername.getText().toString(), mPassword.getText().toString());
+                        break;
+                    case DialogState.Detect.FACE_EXSIT:
+                        mDialog.changeState(DialogState.Detect.FACE_EXSIT, "");
                         break;
                     default:
                         break;
@@ -190,20 +221,16 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             mDialog.changeState(DialogState.Register.INFOMATION_NOT_COMPLETE, username);
         } else if (!password.equals(re_password)) {
             mDialog.changeState(DialogState.Register.PASSWORD_NOT_MACTH, username);
-        }
-        else if(IMAGE_PATH_1==null||IMAGE_PATH_2 == null||IMAGE_PATH_3 == null){
-            mDialog.changeState(DialogState.Register.INFOMATION_NOT_COMPLETE,"");
-        }
-        else {
-            mFaceRequest = new FaceRequest(mHandler,IMAGE_PATH_1,IMAGE_PATH_2,IMAGE_PATH_3);
+        } else if (IMAGE_PATH_1 == null || IMAGE_PATH_2 == null || IMAGE_PATH_3 == null) {
+            mDialog.changeState(DialogState.Register.INFOMATION_NOT_COMPLETE, "");
+        } else {
+            mFaceRequest = new FaceRequest(mHandler, IMAGE_PATH_1, IMAGE_PATH_2, IMAGE_PATH_3);
             mFaceRequest.detect();
-            //  mExecute.Register(username, password, re_password, IMAGE_PATH_1, IMAGE_PATH_2, IMAGE_PATH_3);
         }
     }
 
     @Override
     public void onDestroy() {
-        mDialog.DestroyDialog();
         super.onDestroy();
     }
 }

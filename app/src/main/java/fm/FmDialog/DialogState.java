@@ -18,4 +18,17 @@ public class DialogState {
         public static final int ALREDY_REGISTER = 5;
         public static final int REGISTER_SUCCESS = 6;
     }
+
+    public class Detect {
+        public static final int FACE_ERROR_1 = 301;
+        public static final int FACE_ERROR_2 = 302;
+        public static final int FACE_ERROR_3 = 303;
+
+        public static final int FACE_DETECT_SUCCESS = 304;
+
+        public static final int FACE_EXSIT = 305;
+
+        public static final int FACE_CAN_REGISTER = 306;
+        public static final int FACE_NOT_REGISTER = 307;
+    }
 }

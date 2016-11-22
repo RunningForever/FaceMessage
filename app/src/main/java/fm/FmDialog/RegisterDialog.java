@@ -1,8 +1,9 @@
 package fm.FmDialog;
 
 import android.content.Context;
-import fm.FaceDetect.FaceDetect;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import fm.FaceDetect.FaceDetect;
 
 /**
  * Created by Administrator on 10/25/2016.
@@ -18,8 +19,8 @@ public class RegisterDialog {
         mContext = context;
     }
 
-    public RegisterDialog show(){
-        mDialog = new SweetAlertDialog(mContext,SweetAlertDialog.PROGRESS_TYPE);
+    public RegisterDialog show() {
+        mDialog = new SweetAlertDialog(mContext, SweetAlertDialog.PROGRESS_TYPE);
         mDialog.setCancelable(false);
         mDialog.setTitleText("Waiting...");
         mDialog.setContentText("Registering...");
@@ -27,8 +28,8 @@ public class RegisterDialog {
         return this;
     }
 
-    public RegisterDialog changeState(int state,String mUsername){
-        switch (state){
+    public RegisterDialog changeState(int state, String mUsername) {
+        switch (state) {
             case DialogState.Register.INFOMATION_NOT_COMPLETE:
                 mDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
                 mDialog.setTitleText("infomation complete error");
@@ -47,7 +48,7 @@ public class RegisterDialog {
             case DialogState.Register.REGISTER_SUCCESS:
                 mDialog.changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
                 mDialog.setTitleText("Success");
-                mDialog.setContentText("Deal "+mUsername+" Welcome to FaceMessage");
+                mDialog.setContentText("Deal " + mUsername + " Welcome to FaceMessage");
                 break;
             case DialogState.Register.ALREDY_REGISTER:
                 mDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
@@ -66,13 +67,35 @@ public class RegisterDialog {
                 mDialog.setTitleText("Unkown Error");
                 mDialog.setContentText("Please try again");
                 break;
+            case DialogState.Detect.FACE_ERROR_1:
+                mDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
+                mDialog.setTitleText("Detect Error");
+                mDialog.setContentText("The first face cause error");
+                break;
+            case DialogState.Detect.FACE_ERROR_2:
+                mDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
+                mDialog.setTitleText("Detect Error");
+                mDialog.setContentText("The second face cause error");
+                break;
+            case DialogState.Detect.FACE_ERROR_3:
+                mDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
+                mDialog.setTitleText("Detect Error");
+                mDialog.setContentText("The third face cause error");
+                break;
+            case DialogState.Detect.FACE_DETECT_SUCCESS:
+                break;
+            case DialogState.Detect.FACE_EXSIT:
+                mDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
+                mDialog.setTitleText("Face Exsit");
+                mDialog.setContentText("the face already register");
+                break;
             default:
                 break;
         }
         return this;
     }
 
-    public void DestroyDialog(){
+    public void DestroyDialog() {
         mDialog.dismissWithAnimation();
     }
 }

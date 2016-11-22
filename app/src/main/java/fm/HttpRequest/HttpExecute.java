@@ -68,14 +68,14 @@ public class HttpExecute extends Thread implements Runnable {
 
     @Override
     public void run() {
-        String json =   Post(mUrl.get(mRequestCode),mRequestBody);
+        String json = Post(mUrl.get(mRequestCode),mRequestBody);
         Message message = mHandler.obtainMessage();
         message.obj = json;
         message.what = MSG_SERVER_RESULT;
         mHandler.sendMessage(message);
     }
 
-    public void Register(String username,String password,String rePassword,String image_1,String image_2,String image_3) {
+    public void Register(String username,String password) {
             RequestBody mBody = new FormBody.Builder()
                     .addEncoded("username", username)
                     .addEncoded("password", password)
