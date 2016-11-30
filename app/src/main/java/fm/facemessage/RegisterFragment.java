@@ -24,6 +24,7 @@ import java.io.File;
 import fm.FaceDetect.FaceDetect;
 import fm.FaceSet.Set;
 import fm.FaceSet.SetSearch;
+import fm.FaceSet.SetUserId;
 import fm.FmDialog.DialogState;
 import fm.FmDialog.RegisterDialog;
 import fm.HttpRequest.FaceRequest;
@@ -75,6 +76,10 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     private Set mSet;
 
+    private String mToken;
+
+    private SetUserId setUserId;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -124,6 +129,8 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                                     mDialog.changeState(DialogState.Register.ALREDY_REGISTER, jsonObject.getString("username"));
                                     break;
                                 case REGISTER_STATE_SUCCESS:
+                                    setUserId = new SetUserId(mToken, mUername.getText().toString(), mHandler);
+                                    setUserId.Post();
                                     mDialog.changeState(DialogState.Register.REGISTER_SUCCESS, jsonObject.getString("username"));
                                     break;
                             }
@@ -144,7 +151,8 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                         mDialog.changeState(DialogState.Detect.FACE_ERROR_3, "");
                         break;
                     case DialogState.Detect.FACE_DETECT_SUCCESS:
-                        mSearch = new SetSearch(mHandler, (String) msg.obj);
+                        mToken = (String) msg.obj;
+                        mSearch = new SetSearch(mHandler, mToken);
                         mSearch.start();
                         break;
                     case DialogState.Detect.FACE_CAN_REGISTER:

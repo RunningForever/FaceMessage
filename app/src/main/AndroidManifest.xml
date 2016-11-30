@@ -23,6 +23,8 @@
         </activity>
         <activity android:name="fm.takePhoto.TakeActivity">
         </activity>
+        <activity android:name=".MainActivity">
+        </activity>
     </application>
 
 </manifest>
