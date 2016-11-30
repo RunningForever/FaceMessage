@@ -1,3 +1,5 @@
 # FaceMessage
 
-#这是一款基于faca++，利用人脸识别来留言的软件！
+#This is an app in megvii cloud,it can conmmunicate with others by your face!
+#Server address https://github.com/RunningForever/FaceMessage-Server
+#If you hava any suggestions,Please send message to d.rong@outlook.com
